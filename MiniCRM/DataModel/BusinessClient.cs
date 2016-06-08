@@ -8,5 +8,7 @@ namespace DataModel
 {
     class BusinessClient
     {
+        public string NIP { get; set; }
+        public string Name { get; set; }
     }
 }

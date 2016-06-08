@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataModel
 {
-    class RetailClient
+    class Product
     {
-        public string Pesel { get; set; }
-        public string Surname { get; set; }
+        public uint Id { get; set; }
         public string Name { get; set; }
+        public double Price { get; set; }
+        public string Description { get; set; }
+        public uint Amount { get; set; }
     }
 }

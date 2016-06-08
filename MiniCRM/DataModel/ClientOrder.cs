@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DataModel
 {
-    class ClientOrder
+    class ClientOrder : Order
     {
+        public Client Client { get; set; }
     }
 }
