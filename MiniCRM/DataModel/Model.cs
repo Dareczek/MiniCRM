@@ -1,8 +1,6 @@
 namespace DataModel
 {
-    using System;
     using System.Data.Entity;
-    using System.Linq;
 
     public class Model : DbContext
     {
@@ -21,12 +19,12 @@ namespace DataModel
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
-        public DbSet<BusinessClient> BusinessClients { get; set; }
-        public DbSet<ClientOrder> ClientOrders { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<RetailClient> RetailClients { get; set; }
-        public DbSet<Settings> Settings { get; set; }
+        //public virtual DbSet<BusinessClient> BusinessClients { get; set; }
+        //public virtual DbSet<ClientOrder> ClientOrders { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        //public virtual DbSet<RetailClient> RetailClients { get; set; }
+        //public virtual DbSet<Settings> Settings { get; set; }
     }
 
     //public class MyEntity
