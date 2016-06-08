@@ -1,6 +1,6 @@
 ﻿namespace DataModel
 {
-    class RetailClient
+    public class RetailClient : Client
     {
         public string Pesel { get; set; }
         public string Surname { get; set; }
