@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DataModel
 {
@@ -13,5 +9,7 @@ namespace DataModel
         public double Price { get; set; }
         public string Description { get; set; }
         public uint Amount { get; set; }
+
+        public virtual Order Order { get; set; }
     }
 }
