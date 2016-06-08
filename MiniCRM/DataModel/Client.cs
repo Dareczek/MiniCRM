@@ -17,6 +17,6 @@ namespace DataModel
         public string Email { get; set; }
         public string Telephone { get; set; }
         public YesNo Active { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<ClientOrder> ClientOrders { get; set; }
     }
 }
