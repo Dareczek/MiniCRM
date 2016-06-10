@@ -1,0 +1,21 @@
+﻿<Window x:Class="MiniCRM.OkienkoOpcje"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="OptionsWindow" Height="300" Width="300">
+    <Grid>
+        <StackPanel>
+            <Label Content="Login:" HorizontalAlignment="Left"/>
+            <TextBox Name="TextBox1" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
+            <Label Content="Hasło:" HorizontalAlignment="Left"/>
+            <TextBox Name="TextBox2" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
+            <Label Content="Connection string:" HorizontalAlignment="Left"/>
+            <TextBox Name="TextBox3" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
+            <Label Content="E-mail (na który będą wysyłane przypomnienia):" HorizontalAlignment="Left"/>
+            <TextBox Name="TextBox4" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
+            <Button x:Name="Button1" Content="OK" Height="20" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="97,20,96.6,20" Click="Button1_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
