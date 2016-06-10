@@ -11,11 +11,11 @@ namespace MiniCRM
     /// </summary>
     public partial class Zamowienia
     {
-        private Model _model;
+       // private Model _model;
         public Zamowienia()
         {
             InitializeComponent();
-            _model = ((MainWindow)Application.Current.MainWindow).Model;
+           // _model = ((MainWindow)Application.Current.MainWindow).Model;
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -26,8 +26,8 @@ namespace MiniCRM
                 //System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
                 //myCollectionViewSource.Source = your data
                 var zdarzenieViewSource = ((CollectionViewSource)(FindResource("orderViewSource")));
-                _model.Orders.Load();
-                zdarzenieViewSource.Source = _model.Orders.Local;
+               // _model.Orders.Load();
+               // zdarzenieViewSource.Source = _model.Orders.Local;
             }
         }
     }

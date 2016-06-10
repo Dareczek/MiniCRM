@@ -13,7 +13,7 @@ namespace DataModel
     };
     public class Order
     {
-        [Key]
+        
         public uint OrderId { get; set; }
         public DateTime DateTime { get; set; }
         public bool Paid { get; set; }

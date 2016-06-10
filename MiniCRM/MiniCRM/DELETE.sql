@@ -1,7 +1,7 @@
-delete dbo.Clients;
-delete dbo.BusinessClient;
-delete dbo.RetailClient;
-delete dbo.Orderik;
+delete dbo.Settingsy;
 delete dbo.ClientOrder;
+delete dbo.Orderik;
 delete dbo.Product;
-delete dbo.Settings;
+delete dbo.RetailClient;
+delete dbo.BusinessClient;
+delete dbo.Client;

@@ -11,7 +11,7 @@ namespace DataModel
 
     public class Client
     {
-        [Key]
+       
         public uint ClientId { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }

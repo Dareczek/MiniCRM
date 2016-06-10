@@ -1,46 +1,46 @@
 CREATE TABLE Client
 (
 	ClientId int identity(1, 1) primary key,
-	Adress varchar,
-	Email varchar,
-	Telephone varchar,
-	Active varchar
-	YesNo byte,
+	Adress varchar(max),
+	Email varchar(max),
+	Telephone varchar(max),
+	Active varchar(max),
+	YesNo int
 );
 
 CREATE TABLE BusinessClient
 (
 	BusinessClientId int identity(1, 1) primary key,
-	ClientId int foreign key references Client(ClientId),
-	Adress varchar,
-	Email varchar,
-	Telephone varchar,
-	Active varchar,
-	YesNo byte,
-	Nip varchar,
-    Name varchar
+	ClientId int references Client(ClientId),
+	Adress varchar(max),
+	Email varchar(max),
+	Telephone varchar(max),
+	Active varchar(max),
+	YesNo int,
+	Nip varchar(max),
+    Name varchar(max)
 );
 
 CREATE TABLE RetailClient
 (
 	RetailClientId int identity(1, 1) primary key,
-	ClientId int foreign key references Client(ClientId),
-	Adress varchar,
-	Email varchar,
-	Telephone varchar,
-	Active varchar,
-	YesNo varchar,
-	Pesel varchar,
-    Name varchar,
-	Surname varchar
+	ClientId int references Client(ClientId),
+	Adress varchar(max),
+	Email varchar(max),
+	Telephone varchar(max),
+	Active varchar(max),
+	YesNo int,
+	Pesel varchar(max),
+    Name varchar(max),
+	Surname varchar(max)
 );
 
 CREATE TABLE Product
 (
 	ProductId int identity(1, 1) primary key,
-	Name varchar,
-	Price double,
-	Descriptionik varchar,
+	Name varchar(max),
+	Price float,
+	Descriptionik varchar(max),
 	Amount int
 );
 
@@ -48,7 +48,7 @@ CREATE TABLE Orderik
 (
 	OrderikId int identity(1, 1) primary key,
 	Paid int,
-	Statusik varchar,
+	Statusik varchar(max),
 	Amount int,
 	DataTimik date,
 );
@@ -58,19 +58,20 @@ CREATE TABLE Orderik
 CREATE TABLE ClientOrder
 (
 	ClientOrderId int identity(1, 1) primary key,
-	OrderikId int foreign key references Order(OrderikId),
-	ClientId int foreign key references Client(ClientId),
-	ProductId int foreign key references Product(ProductId),
+	OrderikId int references Orderik(OrderikId),
+	ClientId int references Client(ClientId),
+	ProductId int references Product(ProductId),
 	Paid int,
-	Statusik varchar,
+	Statusik varchar(max),
 	Amount int,
 	DataTimik date,
-	Telefon varchar,
-	Email varchar
+	Telefon varchar(max),
+	Email varchar(max)
 );
 		
-CREATE TABLE Settings
+CREATE TABLE Settingsy
 (
-	Loginek varchar primary key,
-	Passwordek varchar
+	SettingsyId int identity(1, 1) primary key,
+	Loginek varchar(max),
+	Passwordek varchar(max)
 );

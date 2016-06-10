@@ -13,8 +13,6 @@
             <TextBox Name="TextBox2" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
             <Label Content="Connection string:" HorizontalAlignment="Left"/>
             <TextBox Name="TextBox3" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
-            <Label Content="E-mail (na który będą wysyłane przypomnienia):" HorizontalAlignment="Left"/>
-            <TextBox Name="TextBox4" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
             <Button x:Name="Button1" Content="OK" Height="20" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="97,20,96.6,20" Click="Button1_Click"/>
         </StackPanel>
     </Grid>

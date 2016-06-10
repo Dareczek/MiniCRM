@@ -5,7 +5,7 @@ namespace DataModel
 {
     public class Product
     {
-        [Key]
+       
         public uint ProductId { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
