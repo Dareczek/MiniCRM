@@ -7,7 +7,7 @@ namespace DataModel
     {
         Nie,
         Tak
-    };
+    }
 
     public class Client
     {

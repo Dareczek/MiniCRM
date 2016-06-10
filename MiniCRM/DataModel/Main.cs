@@ -9,16 +9,13 @@ namespace DataModel
         {
             using (var db = new Model())
             {
-                // Create and save a new Blog 
-                Console.Write("Enter a name for a new Blog: ");
-                var name = Console.ReadLine();
 
-                var lol = new ClientOrder() {Amount = 8};
-                db.ClientOrders.Add(lol);
+                var lol = new Order() {Amount = 8};
+                db.Orders.Add(lol);
                 db.SaveChanges();
 
                 // Display all Blogs from the database 
-                var query = from b in db.ClientOrders
+                var query = from b in db.Orders
                             orderby b.Amount
                             select b;
 
