@@ -51,6 +51,7 @@ CREATE TABLE Orderik
 	Statusik varchar(max),
 	Amount int,
 	DataTimik date,
+	ProductId int references Product(ProductId)
 );
 
 

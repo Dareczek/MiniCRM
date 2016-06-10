@@ -18,6 +18,7 @@ namespace DataModel
         public Product()
         {
             this.ClientOrders = new HashSet<ClientOrder>();
+            this.Orderiks = new HashSet<Orderik>();
         }
     
         public int ProductId { get; set; }
@@ -28,5 +29,7 @@ namespace DataModel
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientOrder> ClientOrders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Orderik> Orderiks { get; set; }
     }
 }

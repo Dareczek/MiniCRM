@@ -8,27 +8,5 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Zamowienia">
 
-    <Page.Resources>
-        <CollectionViewSource x:Key="orderViewSource" d:DesignSource="{d:DesignInstance {x:Type DataModel:Order}, CreateList=True}"/>
-    </Page.Resources>
-
-    <Grid DataContext="{StaticResource orderViewSource}" Margin="0,0,-243,0">
-
-        <DataGrid x:Name="orderDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="24,53,24,47" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="amountColumn" Width="SizeToHeader" Header="Amount" Binding="{Binding Amount}"/>
-                <DataGridTemplateColumn x:Name="dateTimeColumn" Width="SizeToHeader" Header="Date Time">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding DateTime, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="idColumn" Width="SizeToHeader" Header="Id" Binding="{Binding Id}"/>
-                <DataGridCheckBoxColumn x:Name="paidColumn" Width="SizeToHeader" Header="Paid" Binding="{Binding Paid}"/>
-                <DataGridTextColumn x:Name="statusColumn" Width="SizeToHeader" Header="Status" Binding="{Binding Status}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-
-    </Grid>
+   
 </Page>

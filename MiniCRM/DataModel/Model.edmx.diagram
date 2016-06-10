@@ -4,18 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="18cdc45fa33441f9b04476c8aabb1417" Name="Diagram1" ZoomLevel="73">
-        <EntityTypeShape EntityType="CRMModel.BusinessClient" Width="1.5" PointX="6.375" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRMModel.Client" Width="1.5" PointX="4.875" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRMModel.ClientOrder" Width="1.5" PointX="1" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRMModel.Orderik" Width="1.5" PointX="1" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRMModel.Product" Width="1.5" PointX="4.875" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRMModel.RetailClient" Width="1.5" PointX="2.625" PointY="11.5" IsExpanded="true" />
-        <AssociationConnector Association="CRMModel.FK__BusinessC__Clien__0697FACD" ManuallyRouted="false" />
-        <AssociationConnector Association="CRMModel.FK__ClientOrd__Clien__11158940" ManuallyRouted="false" />
-        <AssociationConnector Association="CRMModel.FK__RetailCli__Clien__09746778" ManuallyRouted="false" />
-        <AssociationConnector Association="CRMModel.FK__ClientOrd__Order__10216507" ManuallyRouted="false" />
-        <AssociationConnector Association="CRMModel.FK__ClientOrd__Produ__1209AD79" ManuallyRouted="false" />
+      <Diagram DiagramId="19cf2d019da34710922f5dfb4b398ca9" Name="Diagram1" ZoomLevel="34">
+        <EntityTypeShape EntityType="CRMModel.BusinessClient" Width="1.5" PointX="3.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Client" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.ClientOrder" Width="1.5" PointX="1.125" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Orderik" Width="1.5" PointX="1" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Product" Width="1.5" PointX="7.375" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.RetailClient" Width="1.5" PointX="7.625" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="CRMModel.FK__BusinessC__Clien__16CE6296" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK__ClientOrd__Clien__22401542" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK__RetailCli__Clien__19AACF41" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK__ClientOrd__Order__214BF109" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK__ClientOrd__Produ__2334397B" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK__Orderik__Product__1E6F845E" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
