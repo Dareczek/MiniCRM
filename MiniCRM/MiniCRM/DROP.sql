@@ -1,4 +1,3 @@
-drop table dbo.Settingsy;
 drop table dbo.ClientOrder;
 drop table dbo.Orderik;
 drop table dbo.Product;

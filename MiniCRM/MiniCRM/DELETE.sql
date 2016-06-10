@@ -1,4 +1,3 @@
-delete dbo.Settingsy;
 delete dbo.ClientOrder;
 delete dbo.Orderik;
 delete dbo.Product;

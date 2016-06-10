@@ -68,10 +68,3 @@ CREATE TABLE ClientOrder
 	Telefon varchar(max),
 	Email varchar(max)
 );
-		
-CREATE TABLE Settingsy
-(
-	SettingsyId int identity(1, 1) primary key,
-	Loginek varchar(max),
-	Passwordek varchar(max)
-);

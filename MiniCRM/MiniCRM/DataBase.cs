@@ -17,11 +17,6 @@ namespace MiniCRM
             _sqlConnection.Open();
         }
 
-        ~DataBase() //właściwie to nie wiem czy to się kiedykolwiek wykona
-        {
-            Disconnect();
-        }
-
         public void Reconnect()
         {
             Disconnect();

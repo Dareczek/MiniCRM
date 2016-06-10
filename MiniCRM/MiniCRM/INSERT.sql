@@ -17,6 +17,4 @@ insert into Orderik(Paid,Statusik,Amount,DataTimik) values
 insert into ClientOrder(OrderikId,ClientId,ProductId,Paid,Statusik,Amount,DataTimik,Telefon,Email) values
 	(1,2,1,0,'Oczekujace','12','2013-05-24','123456789','Owocowa@gmail.com');	
 	
-insert into Settingsy(Loginek,Passwordek) values
-	('gerolt','rivia');	
 
