@@ -90,7 +90,6 @@
       <DependentUpon>OkienkoOpcje.xaml</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
-    <Compile Include="Product.cs" />
     <Compile Include="Productt.xaml.cs">
       <DependentUpon>Productt.xaml</DependentUpon>
     </Compile>

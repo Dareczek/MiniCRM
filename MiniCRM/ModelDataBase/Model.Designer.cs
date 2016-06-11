@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Mati\Source\Repos\MiniCRM\MiniCRM\ModelDataBase\Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\darmr\Documents\Visual Studio 2015\MiniCRM\MiniCRM\ModelDataBase\Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -25,7 +25,7 @@ namespace MiniCRM
             _crmEntities = ((MainWindow)Application.Current.MainWindow).CrmEntities;
             CurrencyComboBox.ItemsSource = Enum.GetValues(typeof(Currency));
             CurrencyComboBox.SelectedIndex = 0;
-            //ProductNameColumn.ItemsSource = _crmEntities.Products.Local;
+            KlientColumn.ItemsSource = _crmEntities.Products.Local;
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {

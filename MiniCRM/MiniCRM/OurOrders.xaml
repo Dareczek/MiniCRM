@@ -31,6 +31,17 @@
         </Grid.RowDefinitions>
         <DataGrid x:Name="OrderikDataGrid" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="5" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
+
+                <DataGridComboBoxColumn x:Name="KlientColumn" Header="Klient" Width="SizeToHeader" SelectedValueBinding="{Binding Product, Mode=TwoWay}" DisplayMemberPath="{Binding Product}" >
+                    <DataGridComboBoxColumn.EditingElementStyle>
+                        <Style TargetType="{x:Type ComboBox}">
+                            <EventSetter Event="SelectionChanged" Handler="SomeSelectionChanged" />
+                        </Style>
+                    </DataGridComboBoxColumn.EditingElementStyle>
+                </DataGridComboBoxColumn>
+
+
+
                 <DataGridTextColumn x:Name="AmountColumn" Binding="{Binding Amount}" Header="Amount" Width="SizeToHeader"/>
                 <DataGridTemplateColumn x:Name="DataTimikColumn" Header="Data Timik" Width="SizeToHeader">
                     <DataGridTemplateColumn.CellTemplate>
