@@ -63,6 +63,10 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="TAlex.WPF.Controls, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TAlex.WPF.Controls.2.0.1.0\lib\net40\TAlex.WPF.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -73,11 +77,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BusinessClient.cs" />
+    <Compile Include="CountMoney.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientOrder.cs" />
     <Compile Include="Clientss.xaml.cs">
       <DependentUpon>Clientss.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CountOutgoings.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="GlobalOptions.cs" />
     <Compile Include="OkienkoOpcje.xaml.cs">
@@ -148,6 +154,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Fakes Include="Fakes\EntityFramework.SqlServer.fakes" />
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\ModelDataBase.Client.datasource" />
     <None Include="Properties\DataSources\ModelDataBase.ClientOrder.datasource" />
     <None Include="Properties\DataSources\ModelDataBase.CRMEntities.datasource" />
