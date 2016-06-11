@@ -7,7 +7,7 @@ namespace MiniCRM
     /// </summary>
     public partial class MainWindow
     {
-        //public Model Model = new Model();
+        public CRMEntities CrmEntities = new CRMEntities();
         public MainWindow()
         {
             InitializeComponent();
@@ -24,7 +24,14 @@ namespace MiniCRM
 
         private void Window_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
+            CrmEntities.SaveChanges();
+        }
 
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            CrmEntities.SaveChanges();
+            CrmEntities.Dispose();
         }
     }
 }
