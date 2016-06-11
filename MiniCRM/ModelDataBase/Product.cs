@@ -7,33 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataModel
+namespace ModelDataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Client
+    public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Client()
+        public Product()
         {
-            this.BusinessClients = new HashSet<BusinessClient>();
             this.ClientOrders = new HashSet<ClientOrder>();
-            this.RetailClients = new HashSet<RetailClient>();
+            this.Orderiks = new HashSet<Orderik>();
         }
     
-        public int ClientId { get; set; }
-        public string Adress { get; set; }
-        public string Email { get; set; }
-        public string Telephone { get; set; }
-        public string Active { get; set; }
-        public Nullable<int> YesNo { get; set; }
+        public int ProductId { get; set; }
+        public string Name { get; set; }
+        public Nullable<double> Price { get; set; }
+        public string Descriptionik { get; set; }
+        public Nullable<int> Amount { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BusinessClient> BusinessClients { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientOrder> ClientOrders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RetailClient> RetailClients { get; set; }
+        public virtual ICollection<Orderik> Orderiks { get; set; }
     }
 }

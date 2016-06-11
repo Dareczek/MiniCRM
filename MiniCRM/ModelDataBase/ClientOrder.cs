@@ -7,23 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataModel
+namespace ModelDataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class BusinessClient
+    public partial class ClientOrder
     {
-        public int BusinessClientId { get; set; }
+        public int ClientOrderId { get; set; }
+        public Nullable<int> OrderikId { get; set; }
         public Nullable<int> ClientId { get; set; }
-        public string Adress { get; set; }
+        public Nullable<int> ProductId { get; set; }
+        public Nullable<int> Paid { get; set; }
+        public string Statusik { get; set; }
+        public Nullable<int> Amount { get; set; }
+        public Nullable<System.DateTime> DataTimik { get; set; }
+        public string Telefon { get; set; }
         public string Email { get; set; }
-        public string Telephone { get; set; }
-        public string Active { get; set; }
-        public Nullable<int> YesNo { get; set; }
-        public string Nip { get; set; }
-        public string Name { get; set; }
     
         public virtual Client Client { get; set; }
+        public virtual Orderik Orderik { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

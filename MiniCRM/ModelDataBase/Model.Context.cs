@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataModel
+namespace ModelDataBase
 {
     using System;
     using System.Data.Entity;
@@ -25,11 +25,9 @@ namespace DataModel
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BusinessClient> BusinessClients { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<ClientOrder> ClientOrders { get; set; }
         public virtual DbSet<Orderik> Orderiks { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<RetailClient> RetailClients { get; set; }
     }
 }

@@ -1,12 +1,6 @@
-insert into Client(Adress,Email,Telephone,Active,YesNo) values
-	('Warzywna','Warzywa@gmail.com','89651123','Yes',1),
-	('Owocowa','Owocowa@gmail.com','123456789','No',0);
-
-insert into BusinessClient(ClientId, Adress,Email,Telephone,Active,YesNo,Nip,Name) values
-	(1,'Warzywna','Warzywa@gmail.com','89651123','Yes',1,'8888-1','Zbyszko_Pool');
-
-insert into RetailClient(ClientId, Adress,Email,Telephone,Active,YesNo,Pesel,Name,Surname) values
-	(2,'Owocowa','Owocowa@gmail.com','123456789','No',0,'9400001231','Geralt','Z Rivii');	
+insert into Client(Adress,Email,Telephone,Active,Name,Nip,Surname,Pesel) values
+	('Warzywna','Warzywa@gmail.com','89651123','Yes','wololo','1111-11','',''),
+	('Owocowa','Owocowa@gmail.com','123456789','No','wwww','','qqqq','123123');
 
 insert into Product(Name,Price,Descriptionik,Amount) values
 	('Eliksir',2,'Dobry jest',2);

@@ -5,20 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="CRMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="BusinessClient">
-          <Key>
-            <PropertyRef Name="BusinessClientId" />
-          </Key>
-          <Property Name="BusinessClientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ClientId" Type="int" />
-          <Property Name="Adress" Type="varchar(max)" />
-          <Property Name="Email" Type="varchar(max)" />
-          <Property Name="Telephone" Type="varchar(max)" />
-          <Property Name="Active" Type="varchar(max)" />
-          <Property Name="YesNo" Type="int" />
-          <Property Name="Nip" Type="varchar(max)" />
-          <Property Name="Name" Type="varchar(max)" />
-        </EntityType>
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="ClientId" />
@@ -28,7 +14,10 @@
           <Property Name="Email" Type="varchar(max)" />
           <Property Name="Telephone" Type="varchar(max)" />
           <Property Name="Active" Type="varchar(max)" />
-          <Property Name="YesNo" Type="int" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="Nip" Type="varchar(max)" />
+          <Property Name="Surname" Type="varchar(max)" />
+          <Property Name="Pesel" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="ClientOrder">
           <Key>
@@ -66,34 +55,7 @@
           <Property Name="Descriptionik" Type="varchar(max)" />
           <Property Name="Amount" Type="int" />
         </EntityType>
-        <EntityType Name="RetailClient">
-          <Key>
-            <PropertyRef Name="RetailClientId" />
-          </Key>
-          <Property Name="RetailClientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ClientId" Type="int" />
-          <Property Name="Adress" Type="varchar(max)" />
-          <Property Name="Email" Type="varchar(max)" />
-          <Property Name="Telephone" Type="varchar(max)" />
-          <Property Name="Active" Type="varchar(max)" />
-          <Property Name="YesNo" Type="int" />
-          <Property Name="Pesel" Type="varchar(max)" />
-          <Property Name="Name" Type="varchar(max)" />
-          <Property Name="Surname" Type="varchar(max)" />
-        </EntityType>
-        <Association Name="FK__BusinessC__Clien__16CE6296">
-          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
-          <End Role="BusinessClient" Type="Self.BusinessClient" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Client">
-              <PropertyRef Name="ClientId" />
-            </Principal>
-            <Dependent Role="BusinessClient">
-              <PropertyRef Name="ClientId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ClientOrd__Clien__22401542">
+        <Association Name="FK__ClientOrd__Clien__2DB1C7EE">
           <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
           <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -105,7 +67,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ClientOrd__Order__214BF109">
+        <Association Name="FK__ClientOrd__Order__2CBDA3B5">
           <End Role="Orderik" Type="Self.Orderik" Multiplicity="0..1" />
           <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -117,7 +79,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ClientOrd__Produ__2334397B">
+        <Association Name="FK__ClientOrd__Produ__2EA5EC27">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -129,7 +91,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Orderik__Product__1E6F845E">
+        <Association Name="FK__Orderik__Product__29E1370A">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Orderik" Type="Self.Orderik" Multiplicity="*" />
           <ReferentialConstraint>
@@ -141,48 +103,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__RetailCli__Clien__19AACF41">
-          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
-          <End Role="RetailClient" Type="Self.RetailClient" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Client">
-              <PropertyRef Name="ClientId" />
-            </Principal>
-            <Dependent Role="RetailClient">
-              <PropertyRef Name="ClientId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="CRMModelStoreContainer">
-          <EntitySet Name="BusinessClient" EntityType="Self.BusinessClient" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ClientOrder" EntityType="Self.ClientOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orderik" EntityType="Self.Orderik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RetailClient" EntityType="Self.RetailClient" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__BusinessC__Clien__16CE6296" Association="Self.FK__BusinessC__Clien__16CE6296">
-            <End Role="Client" EntitySet="Client" />
-            <End Role="BusinessClient" EntitySet="BusinessClient" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ClientOrd__Clien__22401542" Association="Self.FK__ClientOrd__Clien__22401542">
+          <AssociationSet Name="FK__ClientOrd__Clien__2DB1C7EE" Association="Self.FK__ClientOrd__Clien__2DB1C7EE">
             <End Role="Client" EntitySet="Client" />
             <End Role="ClientOrder" EntitySet="ClientOrder" />
           </AssociationSet>
-          <AssociationSet Name="FK__ClientOrd__Order__214BF109" Association="Self.FK__ClientOrd__Order__214BF109">
+          <AssociationSet Name="FK__ClientOrd__Order__2CBDA3B5" Association="Self.FK__ClientOrd__Order__2CBDA3B5">
             <End Role="Orderik" EntitySet="Orderik" />
             <End Role="ClientOrder" EntitySet="ClientOrder" />
           </AssociationSet>
-          <AssociationSet Name="FK__ClientOrd__Produ__2334397B" Association="Self.FK__ClientOrd__Produ__2334397B">
+          <AssociationSet Name="FK__ClientOrd__Produ__2EA5EC27" Association="Self.FK__ClientOrd__Produ__2EA5EC27">
             <End Role="Product" EntitySet="Product" />
             <End Role="ClientOrder" EntitySet="ClientOrder" />
           </AssociationSet>
-          <AssociationSet Name="FK__Orderik__Product__1E6F845E" Association="Self.FK__Orderik__Product__1E6F845E">
+          <AssociationSet Name="FK__Orderik__Product__29E1370A" Association="Self.FK__Orderik__Product__29E1370A">
             <End Role="Product" EntitySet="Product" />
             <End Role="Orderik" EntitySet="Orderik" />
-          </AssociationSet>
-          <AssociationSet Name="FK__RetailCli__Clien__19AACF41" Association="Self.FK__RetailCli__Clien__19AACF41">
-            <End Role="Client" EntitySet="Client" />
-            <End Role="RetailClient" EntitySet="RetailClient" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -190,21 +130,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="BusinessClient">
-          <Key>
-            <PropertyRef Name="BusinessClientId" />
-          </Key>
-          <Property Name="BusinessClientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClientId" Type="Int32" />
-          <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Active" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="YesNo" Type="Int32" />
-          <Property Name="Nip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Client" Relationship="Self.FK__BusinessC__Clien__16CE6296" FromRole="BusinessClient" ToRole="Client" />
-        </EntityType>
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="ClientId" />
@@ -214,10 +139,11 @@
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Active" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="YesNo" Type="Int32" />
-          <NavigationProperty Name="BusinessClients" Relationship="Self.FK__BusinessC__Clien__16CE6296" FromRole="Client" ToRole="BusinessClient" />
-          <NavigationProperty Name="ClientOrders" Relationship="Self.FK__ClientOrd__Clien__22401542" FromRole="Client" ToRole="ClientOrder" />
-          <NavigationProperty Name="RetailClients" Relationship="Self.FK__RetailCli__Clien__19AACF41" FromRole="Client" ToRole="RetailClient" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Nip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Pesel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ClientOrders" Relationship="Self.FK__ClientOrd__Clien__2DB1C7EE" FromRole="Client" ToRole="ClientOrder" />
         </EntityType>
         <EntityType Name="ClientOrder">
           <Key>
@@ -233,9 +159,9 @@
           <Property Name="DataTimik" Type="DateTime" Precision="0" />
           <Property Name="Telefon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Client" Relationship="Self.FK__ClientOrd__Clien__22401542" FromRole="ClientOrder" ToRole="Client" />
-          <NavigationProperty Name="Orderik" Relationship="Self.FK__ClientOrd__Order__214BF109" FromRole="ClientOrder" ToRole="Orderik" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__ClientOrd__Produ__2334397B" FromRole="ClientOrder" ToRole="Product" />
+          <NavigationProperty Name="Client" Relationship="Self.FK__ClientOrd__Clien__2DB1C7EE" FromRole="ClientOrder" ToRole="Client" />
+          <NavigationProperty Name="Orderik" Relationship="Self.FK__ClientOrd__Order__2CBDA3B5" FromRole="ClientOrder" ToRole="Orderik" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__ClientOrd__Produ__2EA5EC27" FromRole="ClientOrder" ToRole="Product" />
         </EntityType>
         <EntityType Name="Orderik">
           <Key>
@@ -247,8 +173,8 @@
           <Property Name="Amount" Type="Int32" />
           <Property Name="DataTimik" Type="DateTime" Precision="0" />
           <Property Name="ProductId" Type="Int32" />
-          <NavigationProperty Name="ClientOrders" Relationship="Self.FK__ClientOrd__Order__214BF109" FromRole="Orderik" ToRole="ClientOrder" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__Orderik__Product__1E6F845E" FromRole="Orderik" ToRole="Product" />
+          <NavigationProperty Name="ClientOrders" Relationship="Self.FK__ClientOrd__Order__2CBDA3B5" FromRole="Orderik" ToRole="ClientOrder" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Orderik__Product__29E1370A" FromRole="Orderik" ToRole="Product" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -259,38 +185,10 @@
           <Property Name="Price" Type="Double" />
           <Property Name="Descriptionik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Amount" Type="Int32" />
-          <NavigationProperty Name="ClientOrders" Relationship="Self.FK__ClientOrd__Produ__2334397B" FromRole="Product" ToRole="ClientOrder" />
-          <NavigationProperty Name="Orderiks" Relationship="Self.FK__Orderik__Product__1E6F845E" FromRole="Product" ToRole="Orderik" />
+          <NavigationProperty Name="ClientOrders" Relationship="Self.FK__ClientOrd__Produ__2EA5EC27" FromRole="Product" ToRole="ClientOrder" />
+          <NavigationProperty Name="Orderiks" Relationship="Self.FK__Orderik__Product__29E1370A" FromRole="Product" ToRole="Orderik" />
         </EntityType>
-        <EntityType Name="RetailClient">
-          <Key>
-            <PropertyRef Name="RetailClientId" />
-          </Key>
-          <Property Name="RetailClientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClientId" Type="Int32" />
-          <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Active" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="YesNo" Type="Int32" />
-          <Property Name="Pesel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Client" Relationship="Self.FK__RetailCli__Clien__19AACF41" FromRole="RetailClient" ToRole="Client" />
-        </EntityType>
-        <Association Name="FK__BusinessC__Clien__16CE6296">
-          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
-          <End Role="BusinessClient" Type="Self.BusinessClient" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Client">
-              <PropertyRef Name="ClientId" />
-            </Principal>
-            <Dependent Role="BusinessClient">
-              <PropertyRef Name="ClientId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ClientOrd__Clien__22401542">
+        <Association Name="FK__ClientOrd__Clien__2DB1C7EE">
           <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
           <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -302,19 +200,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__RetailCli__Clien__19AACF41">
-          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
-          <End Role="RetailClient" Type="Self.RetailClient" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Client">
-              <PropertyRef Name="ClientId" />
-            </Principal>
-            <Dependent Role="RetailClient">
-              <PropertyRef Name="ClientId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ClientOrd__Order__214BF109">
+        <Association Name="FK__ClientOrd__Order__2CBDA3B5">
           <End Role="Orderik" Type="Self.Orderik" Multiplicity="0..1" />
           <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -326,7 +212,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ClientOrd__Produ__2334397B">
+        <Association Name="FK__ClientOrd__Produ__2EA5EC27">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="ClientOrder" Type="Self.ClientOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -338,7 +224,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Orderik__Product__1E6F845E">
+        <Association Name="FK__Orderik__Product__29E1370A">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Orderik" Type="Self.Orderik" Multiplicity="*" />
           <ReferentialConstraint>
@@ -351,33 +237,23 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CRMEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BusinessClients" EntityType="Self.BusinessClient" />
           <EntitySet Name="Clients" EntityType="Self.Client" />
           <EntitySet Name="ClientOrders" EntityType="Self.ClientOrder" />
           <EntitySet Name="Orderiks" EntityType="Self.Orderik" />
           <EntitySet Name="Products" EntityType="Self.Product" />
-          <EntitySet Name="RetailClients" EntityType="Self.RetailClient" />
-          <AssociationSet Name="FK__BusinessC__Clien__16CE6296" Association="Self.FK__BusinessC__Clien__16CE6296">
-            <End Role="Client" EntitySet="Clients" />
-            <End Role="BusinessClient" EntitySet="BusinessClients" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ClientOrd__Clien__22401542" Association="Self.FK__ClientOrd__Clien__22401542">
+          <AssociationSet Name="FK__ClientOrd__Clien__2DB1C7EE" Association="Self.FK__ClientOrd__Clien__2DB1C7EE">
             <End Role="Client" EntitySet="Clients" />
             <End Role="ClientOrder" EntitySet="ClientOrders" />
           </AssociationSet>
-          <AssociationSet Name="FK__RetailCli__Clien__19AACF41" Association="Self.FK__RetailCli__Clien__19AACF41">
-            <End Role="Client" EntitySet="Clients" />
-            <End Role="RetailClient" EntitySet="RetailClients" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ClientOrd__Order__214BF109" Association="Self.FK__ClientOrd__Order__214BF109">
+          <AssociationSet Name="FK__ClientOrd__Order__2CBDA3B5" Association="Self.FK__ClientOrd__Order__2CBDA3B5">
             <End Role="Orderik" EntitySet="Orderiks" />
             <End Role="ClientOrder" EntitySet="ClientOrders" />
           </AssociationSet>
-          <AssociationSet Name="FK__ClientOrd__Produ__2334397B" Association="Self.FK__ClientOrd__Produ__2334397B">
+          <AssociationSet Name="FK__ClientOrd__Produ__2EA5EC27" Association="Self.FK__ClientOrd__Produ__2EA5EC27">
             <End Role="Product" EntitySet="Products" />
             <End Role="ClientOrder" EntitySet="ClientOrders" />
           </AssociationSet>
-          <AssociationSet Name="FK__Orderik__Product__1E6F845E" Association="Self.FK__Orderik__Product__1E6F845E">
+          <AssociationSet Name="FK__Orderik__Product__29E1370A" Association="Self.FK__Orderik__Product__29E1370A">
             <End Role="Product" EntitySet="Products" />
             <End Role="Orderik" EntitySet="Orderiks" />
           </AssociationSet>
@@ -388,21 +264,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="CRMModelStoreContainer" CdmEntityContainer="CRMEntities">
-          <EntitySetMapping Name="BusinessClients">
-            <EntityTypeMapping TypeName="CRMModel.BusinessClient">
-              <MappingFragment StoreEntitySet="BusinessClient">
-                <ScalarProperty Name="BusinessClientId" ColumnName="BusinessClientId" />
-                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
-                <ScalarProperty Name="Adress" ColumnName="Adress" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="YesNo" ColumnName="YesNo" />
-                <ScalarProperty Name="Nip" ColumnName="Nip" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Clients">
             <EntityTypeMapping TypeName="CRMModel.Client">
               <MappingFragment StoreEntitySet="Client">
@@ -411,7 +272,10 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Telephone" ColumnName="Telephone" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="YesNo" ColumnName="YesNo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Nip" ColumnName="Nip" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -451,22 +315,6 @@
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Descriptionik" ColumnName="Descriptionik" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RetailClients">
-            <EntityTypeMapping TypeName="CRMModel.RetailClient">
-              <MappingFragment StoreEntitySet="RetailClient">
-                <ScalarProperty Name="RetailClientId" ColumnName="RetailClientId" />
-                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
-                <ScalarProperty Name="Adress" ColumnName="Adress" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="YesNo" ColumnName="YesNo" />
-                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

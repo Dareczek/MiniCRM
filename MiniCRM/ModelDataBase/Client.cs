@@ -7,24 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataModel
+namespace ModelDataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class RetailClient
+    public partial class Client
     {
-        public int RetailClientId { get; set; }
-        public Nullable<int> ClientId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Client()
+        {
+            this.ClientOrders = new HashSet<ClientOrder>();
+        }
+    
+        public int ClientId { get; set; }
         public string Adress { get; set; }
         public string Email { get; set; }
         public string Telephone { get; set; }
         public string Active { get; set; }
-        public Nullable<int> YesNo { get; set; }
-        public string Pesel { get; set; }
         public string Name { get; set; }
+        public string Nip { get; set; }
         public string Surname { get; set; }
+        public string Pesel { get; set; }
     
-        public virtual Client Client { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClientOrder> ClientOrders { get; set; }
     }
 }

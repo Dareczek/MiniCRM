@@ -7,29 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataModel
+namespace ModelDataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Orderik
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Orderik()
         {
             this.ClientOrders = new HashSet<ClientOrder>();
-            this.Orderiks = new HashSet<Orderik>();
         }
     
-        public int ProductId { get; set; }
-        public string Name { get; set; }
-        public Nullable<double> Price { get; set; }
-        public string Descriptionik { get; set; }
+        public int OrderikId { get; set; }
+        public Nullable<int> Paid { get; set; }
+        public string Statusik { get; set; }
         public Nullable<int> Amount { get; set; }
+        public Nullable<System.DateTime> DataTimik { get; set; }
+        public Nullable<int> ProductId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientOrder> ClientOrders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orderik> Orderiks { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

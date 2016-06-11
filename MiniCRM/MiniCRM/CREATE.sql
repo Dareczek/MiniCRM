@@ -5,34 +5,10 @@ CREATE TABLE Client
 	Email varchar(max),
 	Telephone varchar(max),
 	Active varchar(max),
-	YesNo int
-);
-
-CREATE TABLE BusinessClient
-(
-	BusinessClientId int identity(1, 1) primary key,
-	ClientId int references Client(ClientId),
-	Adress varchar(max),
-	Email varchar(max),
-	Telephone varchar(max),
-	Active varchar(max),
-	YesNo int,
+	Name varchar(max),
 	Nip varchar(max),
-    Name varchar(max)
-);
-
-CREATE TABLE RetailClient
-(
-	RetailClientId int identity(1, 1) primary key,
-	ClientId int references Client(ClientId),
-	Adress varchar(max),
-	Email varchar(max),
-	Telephone varchar(max),
-	Active varchar(max),
-	YesNo int,
-	Pesel varchar(max),
-    Name varchar(max),
-	Surname varchar(max)
+    Surname varchar(max),
+	Pesel varchar(max)
 );
 
 CREATE TABLE Product

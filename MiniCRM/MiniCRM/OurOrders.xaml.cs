@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Data;
 using DataModel;
+using ModelDataBase;
 
 namespace MiniCRM
 {
