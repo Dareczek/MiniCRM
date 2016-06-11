@@ -75,6 +75,9 @@
     <Compile Include="BusinessClient.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientOrder.cs" />
+    <Compile Include="Clientss.xaml.cs">
+      <DependentUpon>Clientss.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="GlobalOptions.cs" />
     <Compile Include="OkienkoOpcje.xaml.cs">
@@ -82,11 +85,21 @@
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="Productt.xaml.cs">
+      <DependentUpon>Productt.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RetailClient.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="OurOrders.xaml.cs">
       <DependentUpon>OurOrders.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SomeoneOrders.xaml.cs">
+      <DependentUpon>SomeoneOrders.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Clientss.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -104,6 +117,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="OurOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Productt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SomeoneOrders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

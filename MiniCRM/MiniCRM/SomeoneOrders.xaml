@@ -1,0 +1,36 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MiniCRM"
+             xmlns:ModelDataBase="clr-namespace:ModelDataBase;assembly=ModelDataBase" x:Class="MiniCRM.SomeoneOrders"
+             mc:Ignorable="d" Loaded="UserControl_Loaded" Height="351.381" Width="1055.801">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="clientOrderViewSource" d:DesignSource="{d:DesignInstance {x:Type ModelDataBase:ClientOrder}, CreateList=True}"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource clientOrderViewSource}" Margin="0,0,-650,65">
+
+        <DataGrid x:Name="clientOrderDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="10,10,-110,90" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="amountColumn" Width="SizeToHeader" Header="Amount" Binding="{Binding Amount}"/>
+                <DataGridTextColumn x:Name="clientIdColumn" Width="SizeToHeader" Header="Client Id" Binding="{Binding ClientId}"/>
+                <DataGridTextColumn x:Name="clientOrderIdColumn" Width="SizeToHeader" Header="Client Order Id" Binding="{Binding ClientOrderId}"/>
+                <DataGridTemplateColumn x:Name="dataTimikColumn" Width="SizeToHeader" Header="Data Timik">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding DataTimik, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="emailColumn" Width="SizeToHeader" Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn x:Name="orderikIdColumn" Width="SizeToHeader" Header="Orderik Id" Binding="{Binding OrderikId}"/>
+                <DataGridTextColumn x:Name="paidColumn" Width="SizeToHeader" Header="Paid" Binding="{Binding Paid}"/>
+                <DataGridTextColumn x:Name="productIdColumn" Width="SizeToHeader" Header="Product Id" Binding="{Binding ProductId}"/>
+                <DataGridTextColumn x:Name="statusikColumn" Width="SizeToHeader" Header="Statusik" Binding="{Binding Statusik}"/>
+                <DataGridTextColumn x:Name="telefonColumn" Width="SizeToHeader" Header="Telefon" Binding="{Binding Telefon}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

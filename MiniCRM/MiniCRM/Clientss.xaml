@@ -1,0 +1,29 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MiniCRM"
+             xmlns:ModelDataBase="clr-namespace:ModelDataBase;assembly=ModelDataBase" x:Class="MiniCRM.Clientss"
+             mc:Ignorable="d" Loaded="UserControl_Loaded" Height="336.464" Width="779.006">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="clientViewSource" d:DesignSource="{d:DesignInstance {x:Type ModelDataBase:Client}, CreateList=True}"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource clientViewSource}">
+
+        <DataGrid x:Name="clientDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="10,10,-110,90" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="activeColumn" Width="SizeToHeader" Header="Active" Binding="{Binding Active}"/>
+                <DataGridTextColumn x:Name="adressColumn" Width="SizeToHeader" Header="Adress" Binding="{Binding Adress}"/>
+                <DataGridTextColumn x:Name="clientIdColumn" Width="SizeToHeader" Header="Client Id" Binding="{Binding ClientId}"/>
+                <DataGridTextColumn x:Name="emailColumn" Width="SizeToHeader" Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn x:Name="nameColumn" Width="SizeToHeader" Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn x:Name="nipColumn" Width="SizeToHeader" Header="Nip" Binding="{Binding Nip}"/>
+                <DataGridTextColumn x:Name="peselColumn" Width="SizeToHeader" Header="Pesel" Binding="{Binding Pesel}"/>
+                <DataGridTextColumn x:Name="surnameColumn" Width="SizeToHeader" Header="Surname" Binding="{Binding Surname}"/>
+                <DataGridTextColumn x:Name="telephoneColumn" Width="SizeToHeader" Header="Telephone" Binding="{Binding Telephone}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>
