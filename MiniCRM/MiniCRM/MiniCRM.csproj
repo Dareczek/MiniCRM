@@ -127,13 +127,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Fakes Include="Fakes\EntityFramework.SqlServer.fakes" />
-    <None Include="Properties\DataSources\DataModel.BusinessClient.datasource" />
-    <None Include="Properties\DataSources\DataModel.Client.datasource" />
-    <None Include="Properties\DataSources\DataModel.ClientOrder.datasource" />
-    <None Include="Properties\DataSources\DataModel.Order.datasource" />
-    <None Include="Properties\DataSources\DataModel.Product.datasource" />
-    <None Include="Properties\DataSources\DataModel.RetailClient.datasource" />
-    <None Include="Properties\DataSources\DataModel.Settings.datasource" />
+    <None Include="Properties\DataSources\ModelDataBase.Client.datasource" />
+    <None Include="Properties\DataSources\ModelDataBase.ClientOrder.datasource" />
+    <None Include="Properties\DataSources\ModelDataBase.CRMEntities.datasource" />
+    <None Include="Properties\DataSources\ModelDataBase.Orderik.datasource" />
+    <None Include="Properties\DataSources\ModelDataBase.Product.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

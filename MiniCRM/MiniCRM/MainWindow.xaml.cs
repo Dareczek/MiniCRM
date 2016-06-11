@@ -1,11 +1,11 @@
-﻿using DataModel;
-using ModelDataBase;
+﻿using ModelDataBase;
 
 namespace MiniCRM
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow
     {
         public CRMEntities CrmEntities = new CRMEntities();

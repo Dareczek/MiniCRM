@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace MiniCRM
+﻿namespace MiniCRM
 {
     /// <summary>
     /// Interaction logic for App.xaml

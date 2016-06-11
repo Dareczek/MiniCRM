@@ -1,4 +1,4 @@
-﻿namespace DataModel
+﻿namespace MiniCRM
 {
     public class RetailClient : Client
     {

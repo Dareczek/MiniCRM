@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace DataModel
+namespace MiniCRM
 {
     public enum State : byte
     {
