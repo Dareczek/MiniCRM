@@ -31,7 +31,6 @@
             <DataGrid.Columns>
 
                 <DataGridTextColumn x:Name="NameColumn" Width="SizeToHeader" Header="Nazwa produktu" Binding="{Binding Name}"/>
-                <DataGridTextColumn x:Name="AmountColumn" Width="SizeToHeader" Header="Ilość" Binding="{Binding Amount}"/>
                 <DataGridTextColumn x:Name="DescriptionikColumn" Width="SizeToHeader" Header="Krótki opis" Binding="{Binding Descriptionik}"/>
                 <DataGridTextColumn x:Name="PriceColumn" Width="SizeToHeader" Header="Cena" Binding="{Binding Price}"/>
 

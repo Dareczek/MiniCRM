@@ -1,0 +1,42 @@
+PROJEKT AKADEMIA C#
+WYKONAWCY: DARIUSZ MRÓZ, MATEUSZ KOWALSKI
+
+O PROJEKCIE:
+
+Program ten stworzony jest na podobieñstwo CRM-ów (Customer Relationship Management).
+Jest on skierowany do kogoœ kto prowadzi sklep.
+Wyró¿niamy tam cztery typy danych:
+- Mamy nasze zamówienia z hurtowni (dlatego odliczamy VAT).
+- Mamy zamówienia naszych klientów (pe³na cena).
+- Produkty, które sprzedajemy.
+- Listê klientów idnywidualnych lub firm.
+
+Na karcie naszych zamówieñ mo¿emy policzyæ jakie mamy wydatki (ile musimy zap³aciæ za dostawê).
+Na karcie zamówieñ klientów liczymy ile pieniêdzy dostaniemy za sprzeda¿.
+Kwoty mo¿na policzyæ w kilku walutach. Jeœli towar jest  op³acony to nie zostanie doliczony.
+Wszystkie dane w tabelach mo¿na modyfikowaæ. Baza danych znajduje siê w chmurze Azure i ka¿da
+modyfikacja w tabeli na bie¿¹co aktualizuje jej stan. ¯eby wprowadziæ nowy wiersz w ka¿dej tabeli
+wystarczy wype³niæ komórki ostatniej pozycji w tabeli.
+
+Do programu wchodzimy poprzez logowanie. Login i has³o standardowo: admin admin.
+W ustawieniach mo¿na to zmieniæ. Program prowadzi log, w którym odnotowuje siê ka¿d¹
+próbê logowania udan¹ jak i nieudan¹ (plik: log.txt).
+W ustawieniach s¹ dwie zablokowane ikonki. W trakcie pisania s³u¿y³y do obs³ugi 
+bazy danych. W kodzie s¹ funkcje do tworzenia, wype³nienia, czyszczenia i usuniêcia 
+bazy danych (do³¹czyliœmy pliki sql). Zablokowaliœmy te opcje, ¿eby ktoœ kto to 
+uruchomi, nie usun¹³ bazy danych ;)
+
+Odnoœnie wymagañ projektowych. 
+Klas jest 12 (nie licz¹æ tych z modelu danych)
+U¿ywamy trochê NuGetów (dwa do gui i entity framework).
+
+Prac¹ podzieliliœmy siê po równo (nie wiem czy bêdzie to widaæ, ale Visual sam oznacza, co kto i kiedy zrobi³).
+W programie s¹ 4 widoki (ka¿dy z nas zrobi³ po dwa).
+Ja napisa³em prymitywny kontroler do bazy danych (wysy³anie poleceñ tekstowo).
+Mateusz j¹ stworzy³ na Azure i napisa³ pliki sql. Jak baza ju¿ dzia³a³a to wygenerowa³
+do niej kontroler z pomoc¹ Entity Framework'a. Napisa³em logowanie i ustawienia. Mateusz obs³ugê loga.
+
+Kiedy pracowaliœmy z GitHubem, czasem by³y problemy z referencjami do projektu (prawdopodobnie trzeba by³o
+coœ poprawiæ w pliku .gitignore). Dlatego na wszeli wypadek (jakby visual pogubi³ referencje) dorzucam spakowany 
+ca³y program ze wszystkimi dll'kami i innymi wykorzystywanymi plikami.
+

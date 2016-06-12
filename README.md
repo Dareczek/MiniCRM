@@ -1,2 +1,2 @@
 # MiniCRM
-Akademię C# - Projekt
+Akademia C# - Projekt
