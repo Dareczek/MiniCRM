@@ -13,12 +13,9 @@ namespace MiniCRM
         Euro,
         Dolar    
     }
-    /// <summary>
-    /// Interaction logic for Zamowienia.xaml
-    /// </summary>
     public partial class OurOrders
     {
-        private CRMEntities _crmEntities;
+        private readonly CRMEntities _crmEntities;
         public OurOrders()
         {
             InitializeComponent();
@@ -31,9 +28,9 @@ namespace MiniCRM
         {
             if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
             {
-                var view = ((CollectionViewSource)(FindResource("OrderikViewSource")));
+                var orderikViewSource = ((CollectionViewSource)(FindResource("OrderikViewSource")));
                 _crmEntities.Orderiks.Load();
-                view.Source = _crmEntities.Orderiks.Local;
+                orderikViewSource.Source = _crmEntities.Orderiks.Local;
             }
         }
 
@@ -63,6 +60,11 @@ namespace MiniCRM
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             GlobalOptions.Instance.ChangeGlobalOptions();
+        }
+
+        private void OrderikDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _crmEntities.SaveChanges();
         }
     }
 }

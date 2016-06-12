@@ -2,14 +2,10 @@
 
 namespace MiniCRM
 {
-    /// <summary>
-    /// Interaction logic for Login.xaml
-    /// </summary>
     public partial class Login
     {
-        public string _login;
-        public string _password;
-
+        public string Llogin;
+        public string Ppassword;
         public Login()
         {
             InitializeComponent();
@@ -17,8 +13,8 @@ namespace MiniCRM
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            _login = TextBox1.Text;
-            _password = TextBox2.Text;
+            Llogin = TextBox1.Text;
+            Ppassword = TextBox2.Text;
             Close();
         }
     }

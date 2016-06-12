@@ -29,7 +29,7 @@
             <RowDefinition Height="1*"/>
 
         </Grid.RowDefinitions>
-        <DataGrid x:Name="OrderikDataGrid" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="5" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="OrderikDataGrid" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="5" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="OrderikDataGrid_SelectionChanged">
             <DataGrid.Columns>
 
                 <DataGridTemplateColumn x:Name="DataTimikColumn" Header="Data zamówienia" Width="SizeToHeader">
@@ -67,7 +67,7 @@
             <Label Content="Wynik:" Margin="5,0,5,0"/>
             <Label Name="LabelResult" Content="" Margin="5,5,5,5"/>
         </StackPanel>
-        <Button Name="Ustawienia" Grid.Row="5" Grid.Column="5" Content="Ustawienia" Margin="20,20,20,20" Click="SettingsButton_Click"/>
+        <Button Name="Ustawienia" Grid.Row="3" Grid.Column="4" Content="Ustawienia" Margin="20,20,20,20" Click="SettingsButton_Click"/>
     </Grid>
 </UserControl>
 

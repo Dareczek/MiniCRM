@@ -91,8 +91,8 @@
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OkienkoOpcje.xaml.cs">
-      <DependentUpon>OkienkoOpcje.xaml</DependentUpon>
+    <Compile Include="WindowOption.xaml.cs">
+      <DependentUpon>WindowOption.xaml</DependentUpon>
     </Compile>
     <Compile Include="Productt.xaml.cs">
       <DependentUpon>Productt.xaml</DependentUpon>
@@ -124,7 +124,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="OkienkoOpcje.xaml">
+    <Page Include="WindowOption.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

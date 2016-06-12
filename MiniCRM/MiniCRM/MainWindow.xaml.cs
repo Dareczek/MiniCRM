@@ -1,27 +1,32 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 using DataBase;
 
 namespace MiniCRM
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    public interface ILog
+    {
+       
+        void Log(Login log);
+    }
 
-    public partial class MainWindow
+    public partial class MainWindow : ILog
     {
         public CRMEntities CrmEntities;
+
         public MainWindow()
         {
-
             var login = new Login();
             login.ShowDialog();
-            if (login._login == GlobalOptions.Instance._activeUser.Login && login._password == GlobalOptions.Instance._activeUser.Password)
+            if (login.Llogin == GlobalOptions.Instance.ActiveUser.Login &&
+                login.Ppassword == GlobalOptions.Instance.ActiveUser.Password)
                 InitializeComponent();
             else
             {
                 MessageBox.Show("Zły login lub hasło!", "Uwaga");
-                return;
+                Log(login);
+                Application.Current.Shutdown();
             }
 
             try
@@ -31,30 +36,37 @@ namespace MiniCRM
             catch (Exception)
             {
                 MessageBox.Show("Chyba nie masz internetu.", "Uwaga");
-                return;
+                Application.Current.Shutdown();
             }
-
-            string lolC = GlobalOptions.Instance.ConnectionString;
-            string lolL = GlobalOptions.Instance._activeUser.Login;
-            string lolP = GlobalOptions.Instance._activeUser.Password;
-            
-            // DataBase.Instance.DeleteDataBase();
-            // DataBase.Instance.CreateDataBase();
-            // DataBase.Instance.InsertDataBase();
-            // DataBase.Instance.DropDataBase();
-            // DataBase.Instance.DeleteDataBase();
+     
         }
 
-        //private void Window_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        //{
-        //    CrmEntities.SaveChanges();
-        //}
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             base.OnClosing(e);
             CrmEntities.SaveChanges();
             CrmEntities.Dispose();
+        }
+
+        public void Log(Login log)
+        {
+            DateTime localDate = DateTime.Now;
+            if (!File.Exists(".\\log.txt"))
+            {
+                //  System.IO.File.Create("D:\\log.txt");
+                StreamWriter sw = File.CreateText(".\\log.txt");
+
+                sw.WriteLine("Login: " + log.Llogin + " Haslo: " + log.Ppassword + " Data: " + localDate);
+                sw.Close();
+            }
+            else
+            {
+                using (StreamWriter w = File.AppendText(".\\log.txt"))
+                {
+                    w.WriteLine("Login: " + log.Llogin + " Haslo: " + log.Ppassword + " Data: " + localDate);
+                }
+            }
         }
     }
 }

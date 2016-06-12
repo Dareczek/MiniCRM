@@ -7,12 +7,9 @@ using DataBase;
 
 namespace MiniCRM
 {
-    /// <summary>
-    /// Interaction logic for Productt.xaml
-    /// </summary>
-    public partial class ClientsORderss
+    public partial class ClientsORderss 
     {
-        private CRMEntities _crmEntities;
+        private readonly CRMEntities _crmEntities;
         public ClientsORderss()
         {
             InitializeComponent();
@@ -27,9 +24,9 @@ namespace MiniCRM
         {
             if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
             {
-                var zdarzenieViewSource = ((CollectionViewSource)(FindResource("ClientOrderViewSource")));
+                var clientOrderViewSource = ((CollectionViewSource)(FindResource("ClientOrderViewSource")));
                 _crmEntities.ClientOrders.Load();
-                zdarzenieViewSource.Source = _crmEntities.ClientOrders.Local;
+                clientOrderViewSource.Source = _crmEntities.ClientOrders.Local;
             }
         }
         private void SomeSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -54,6 +51,16 @@ namespace MiniCRM
                     LabelResult.Content += " $";
                     break;
             }
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            GlobalOptions.Instance.ChangeGlobalOptions();
+        }
+
+        private void ClientOrderDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _crmEntities.SaveChanges();
         }
     }
 }

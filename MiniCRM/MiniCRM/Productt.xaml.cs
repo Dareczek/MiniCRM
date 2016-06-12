@@ -1,28 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using DataBase;
 
 namespace MiniCRM
 {
-    /// <summary>
-    /// Interaction logic for Productt.xaml
-    /// </summary>
-    public partial class Productt : UserControl
+   
+    public partial class Productt
     {
-        private CRMEntities _crmEntities;
+        private readonly CRMEntities _crmEntities;
         public Productt()
         {
             InitializeComponent();
@@ -32,10 +19,24 @@ namespace MiniCRM
         {
             if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
             {
-                var zdarzenieViewSource = ((CollectionViewSource)(FindResource("productViewSource")));
+                var productViewSource = ((CollectionViewSource)(FindResource("ProductViewSource")));
                 _crmEntities.Products.Load();
-                zdarzenieViewSource.Source = _crmEntities.Products.Local;
+                productViewSource.Source = _crmEntities.Products.Local;
             }
+        }
+
+        private void SomeSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            GlobalOptions.Instance.ChangeGlobalOptions();
+        }
+
+        private void ProductDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _crmEntities.SaveChanges();
         }
     }
 }

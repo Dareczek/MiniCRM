@@ -10,25 +10,21 @@ namespace MiniCRM
         private static DataBase _dataBase;
         private SqlConnection _sqlConnection;
         public static DataBase Instance => _dataBase ?? (_dataBase = new DataBase());
-
         private DataBase()
         {
             _sqlConnection = new SqlConnection(GlobalOptions.Instance.ConnectionString);
             _sqlConnection.Open();
         }
-
         public void Reconnect()
         {
             Disconnect();
             _sqlConnection = new SqlConnection(GlobalOptions.Instance.ConnectionString);
             _sqlConnection.Open();
         }
-
         private void Disconnect()
         {
             _sqlConnection.Close();
         }
-
         public void SendQuerry(string querry)
         {
             var sqlCommand = new SqlCommand(querry, _sqlConnection);
@@ -40,11 +36,8 @@ namespace MiniCRM
             catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString(), "UWAGA");
-                //throw;
             }
-
         }
-
         public SqlDataReader GetSqlDataReader(string querry)
         {
             var sqlCommand = new SqlCommand(querry, _sqlConnection);
@@ -57,12 +50,9 @@ namespace MiniCRM
             {
                 MessageBox.Show(exception.ToString(), "UWAGA");
                 return null;
-                //throw;
             }
         }
-
         #region CreateDeleteDropInsert
-
         public void CreateDataBase()
         {
             QuerryFromFile("CREATE.sql");
@@ -101,7 +91,6 @@ namespace MiniCRM
             catch (SqlException exception)
             {
                 MessageBox.Show(exception.ToString(), "UWAGA");
-                //throw;
             }
         }
         #endregion

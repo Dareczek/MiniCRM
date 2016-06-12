@@ -2,19 +2,16 @@
 
 namespace MiniCRM
 {
-    /// <summary>
-    /// Interaction logic for OptionsWindow.xaml
-    /// </summary>
-    public partial class OkienkoOpcje
+    public partial class WindowOption
     {
         public string ConectionString;
         public string Login;
         public string Password;
-        public OkienkoOpcje()
+        public WindowOption()
         {
             InitializeComponent();
         }
-        public OkienkoOpcje(string s1, string s2, string s3)
+        public WindowOption(string s1, string s2, string s3)
         {
             InitializeComponent();
             TextBox1.Text = s1;

@@ -15,8 +15,8 @@ namespace MiniCRM
         private const string FileName = "Options.xml";
 
 
-        public User _activeUser;       // 1. trzeba będzie jeszcze dorobić okienko logowania i zobaczyć,
-        public string ConnectionString; // czy dane z okienka zgadzają się z jednym z elementów tej listy
+        public User ActiveUser;    
+        public string ConnectionString; 
         public static GlobalOptions Instance => _globalOptions ?? (_globalOptions = new GlobalOptions());
         private GlobalOptions()
         {
@@ -33,9 +33,9 @@ namespace MiniCRM
                     foreach (var xElement in iEnumerable)
                     {
                         element = xElement.Element("login");
-                        if (element != null) _activeUser.Login = element.Value;
+                        if (element != null) ActiveUser.Login = element.Value;
                         element = xElement.Element("password");
-                        if (element != null) _activeUser.Password = element.Value;
+                        if (element != null) ActiveUser.Password = element.Value;
 
                     }
                 }
@@ -46,13 +46,12 @@ namespace MiniCRM
             catch (Exception)
             {
                 FirstLaunch();
-                //throw;
             }
         }
 
         private void FirstLaunch()
         {
-            var optionsWindow = new OkienkoOpcje();
+            var optionsWindow = new WindowOption();
             optionsWindow.ShowDialog();
             var xml = new XDocument(
                 new XComment("Czy to działa?"),
@@ -75,13 +74,13 @@ namespace MiniCRM
 
         public void ChangeGlobalOptions()
         {
-            var optionsWindow = new OkienkoOpcje(_activeUser.Login, _activeUser.Password, ConnectionString);
+            var optionsWindow = new WindowOption(ActiveUser.Login, ActiveUser.Password, ConnectionString);
             optionsWindow.ShowDialog();
 
-            if (optionsWindow.Login != _activeUser.Login || optionsWindow.Password != _activeUser.Password)
+            if (optionsWindow.Login != ActiveUser.Login || optionsWindow.Password != ActiveUser.Password)
             {
-                _activeUser.Login = optionsWindow.Login;
-                _activeUser.Password = optionsWindow.Password;
+                ActiveUser.Login = optionsWindow.Login;
+                ActiveUser.Password = optionsWindow.Password;
                 ConnectionString = optionsWindow.ConectionString;
 
                 var xml = new XDocument(
@@ -89,8 +88,8 @@ namespace MiniCRM
                     new XElement("options",
                         new XElement("users",
                             new XElement("user",
-                                new XElement("login", _activeUser.Login),
-                                new XElement("password", _activeUser.Password)
+                                new XElement("login", ActiveUser.Login),
+                                new XElement("password", ActiveUser.Password)
                                 )
                             ),
                         new XElement("connectionString", ConnectionString)
