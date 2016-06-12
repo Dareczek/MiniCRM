@@ -10,7 +10,7 @@
         <mui:LinkGroup DisplayName="witaj ;)">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Nasze zamówienia" Source="OurOrders.xaml" />
-                <mui:Link DisplayName="Zamówienia Klientów" Source="SomeoneOrders.xaml" />
+                <mui:Link DisplayName="Zamówienia Klientów" Source="ClientsORderss.xaml" />
                 <mui:Link DisplayName="Produkty" Source="Productt.xaml" />
                 <mui:Link DisplayName="klienci" Source="Clientss.xaml" />
             </mui:LinkGroup.Links>

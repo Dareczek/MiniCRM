@@ -8,7 +8,7 @@ insert into Product(Name,Price,Descriptionik,Amount) values
 insert into Orderik(Paid,Statusik,Amount,DataTimik,ProductId) values
 	(0,'Oczekujace','12','2013-05-24',1);
 	
-insert into ClientOrder(OrderikId,ClientId,ProductId,Paid,Statusik,Amount,DataTimik,Telefon,Email) values
-	(1,2,1,0,'Oczekujace','12','2013-05-24','123456789','Owocowa@gmail.com');	
+insert into ClientOrder(ClientId,ProductId,Paid,Statusik,Amount,DataTimik,Telefon,Email) values
+	(2,1,0,'Oczekujace','12','2013-05-24','123456789','Owocowa@gmail.com');	
 	
 

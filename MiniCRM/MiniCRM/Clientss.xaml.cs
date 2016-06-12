@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Windows;
 using System.Windows.Data;
-using ModelDataBase;
+using DataBase;
 
 namespace MiniCRM
 {

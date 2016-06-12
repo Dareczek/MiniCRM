@@ -1,4 +1,4 @@
-﻿using ModelDataBase;
+﻿using DataBase;
 
 namespace MiniCRM
 {
