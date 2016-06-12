@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:DataModel="clr-namespace:ModelDataBase;assembly=ModelDataBase"
+        xmlns:talex="http://schemas.talex-soft.com/2010/xaml/presentation"
         x:Class="MiniCRM.OurOrders"
         mc:Ignorable="d" Loaded="UserControl_Loaded"
-        Height="720" Width="1200">
+        Height="400" Width="750">
     <UserControl.Resources>
         <CollectionViewSource x:Key="OrderikViewSource" d:DesignSource="{d:DesignInstance {x:Type DataModel:Orderik}, CreateList=True}"/>
     </UserControl.Resources>
@@ -19,18 +20,28 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+
         </Grid.RowDefinitions>
         <DataGrid x:Name="OrderikDataGrid" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="5" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
+
+                <DataGridComboBoxColumn x:Name="KlientColumn" Header="Klient" Width="SizeToHeader" SelectedValueBinding="{Binding Product, Mode=TwoWay}" DisplayMemberPath="{Binding Product}" >
+                    <DataGridComboBoxColumn.EditingElementStyle>
+                        <Style TargetType="{x:Type ComboBox}">
+                            <EventSetter Event="SelectionChanged" Handler="SomeSelectionChanged" />
+                        </Style>
+                    </DataGridComboBoxColumn.EditingElementStyle>
+                </DataGridComboBoxColumn>
+
+
+
                 <DataGridTextColumn x:Name="AmountColumn" Binding="{Binding Amount}" Header="Amount" Width="SizeToHeader"/>
                 <DataGridTemplateColumn x:Name="DataTimikColumn" Header="Data Timik" Width="SizeToHeader">
                     <DataGridTemplateColumn.CellTemplate>
@@ -42,13 +53,20 @@
                 <DataGridTextColumn x:Name="OrderikIdColumn" Binding="{Binding OrderikId}" Header="Orderik Id" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="PaidColumn" Binding="{Binding Paid}" Header="Paid" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="ProductIdColumn" Binding="{Binding ProductId}" Header="Product Id" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="StatusikColumn" Binding="{Binding Statusik}" Header="Statusik" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="statusikColumn" Binding="{Binding Statusik}" Header="Statusik" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
-
-
-
-
+        <StackPanel Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" >
+            <Label Content="Wybierz walutę" Margin="5,0,5,0"/>
+            <ComboBox Name="CurrencyComboBox" Margin="5,5,5,5"/>
+            <Button Name="CountButton" Content="Policz wydatki" Margin="5,0,5,0" Click="CountButton_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="5,5,5,5">
+            <Label Content="Ile wynosi VAT?" Margin="5,0,5,0"/>
+            <talex:NumericUpDown Name="VatNumericUpDown" Focusable="False" Value="23" Margin="5,5,5,5"/>
+            <Label Content="Wynik:" Margin="5,0,5,0"/>
+            <Label Name="LabelResult" Content="" Margin="5,5,5,5"/>
+        </StackPanel>
     </Grid>
 </UserControl>
 
