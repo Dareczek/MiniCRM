@@ -92,6 +92,11 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Client.datasource" />
+    <None Include="Properties\DataSources\ClientOrder.datasource" />
+    <None Include="Properties\DataSources\CRMEntities.datasource" />
+    <None Include="Properties\DataSources\Orderik.datasource" />
+    <None Include="Properties\DataSources\Product.datasource" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model.Context.tt">

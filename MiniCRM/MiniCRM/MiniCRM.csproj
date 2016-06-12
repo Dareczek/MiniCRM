@@ -80,6 +80,7 @@
     <Compile Include="ClientsORderss.xaml.cs">
       <DependentUpon>ClientsORderss.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CountIncomes.cs" />
     <Compile Include="CountMoney.cs" />
     <Compile Include="Clientss.xaml.cs">
       <DependentUpon>Clientss.xaml</DependentUpon>
@@ -87,13 +88,15 @@
     <Compile Include="CountOutgoings.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="GlobalOptions.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OkienkoOpcje.xaml.cs">
       <DependentUpon>OkienkoOpcje.xaml</DependentUpon>
     </Compile>
     <Compile Include="Productt.xaml.cs">
       <DependentUpon>Productt.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
     <Compile Include="OurOrders.xaml.cs">
       <DependentUpon>OurOrders.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Clientss.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,11 +156,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\ModelDataBase.Client.datasource" />
-    <None Include="Properties\DataSources\ModelDataBase.ClientOrder.datasource" />
-    <None Include="Properties\DataSources\ModelDataBase.CRMEntities.datasource" />
-    <None Include="Properties\DataSources\ModelDataBase.Orderik.datasource" />
-    <None Include="Properties\DataSources\ModelDataBase.Product.datasource" />
+    <None Include="Properties\DataSources\DataBase.Client.datasource" />
+    <None Include="Properties\DataSources\DataBase.ClientOrder.datasource" />
+    <None Include="Properties\DataSources\DataBase.CRMEntities.datasource" />
+    <None Include="Properties\DataSources\DataBase.Orderik.datasource" />
+    <None Include="Properties\DataSources\DataBase.Product.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

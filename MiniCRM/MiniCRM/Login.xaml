@@ -1,0 +1,19 @@
+﻿<Window x:Class="MiniCRM.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Login" Height="120" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <StackPanel>
+            <Label Content="Login:" HorizontalAlignment="Left"/>
+            <TextBox Name="TextBox1" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
+            <Label Content="Hasło:" HorizontalAlignment="Left"/>
+            <TextBox Name="TextBox2" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
+            
+            <Button x:Name="Check" Content="OK"  Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin ="5"  Click="Button1_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

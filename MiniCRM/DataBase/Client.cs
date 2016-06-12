@@ -19,7 +19,12 @@ namespace DataBase
         {
             this.ClientOrders = new HashSet<ClientOrder>();
         }
-    
+
+        public override string ToString()
+        {
+            return Name.ToString();
+        }
+
         public int ClientId { get; set; }
         public string Adress { get; set; }
         public string Email { get; set; }

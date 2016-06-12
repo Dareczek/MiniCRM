@@ -1,4 +1,6 @@
-﻿using DataBase;
+﻿using System;
+using System.Windows;
+using DataBase;
 
 namespace MiniCRM
 {
@@ -8,14 +10,34 @@ namespace MiniCRM
 
     public partial class MainWindow
     {
-        public CRMEntities CrmEntities = new CRMEntities();
+        public CRMEntities CrmEntities;
         public MainWindow()
         {
-            InitializeComponent();
+
+            var login = new Login();
+            login.ShowDialog();
+            if (login._login == GlobalOptions.Instance._activeUser.Login && login._password == GlobalOptions.Instance._activeUser.Password)
+                InitializeComponent();
+            else
+            {
+                MessageBox.Show("Zły login lub hasło!", "Uwaga");
+                return;
+            }
+
+            try
+            {
+                CrmEntities = new CRMEntities();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Chyba nie masz internetu.", "Uwaga");
+                return;
+            }
 
             string lolC = GlobalOptions.Instance.ConnectionString;
             string lolL = GlobalOptions.Instance._activeUser.Login;
             string lolP = GlobalOptions.Instance._activeUser.Password;
+            
             // DataBase.Instance.DeleteDataBase();
             // DataBase.Instance.CreateDataBase();
             // DataBase.Instance.InsertDataBase();
@@ -23,10 +45,10 @@ namespace MiniCRM
             // DataBase.Instance.DeleteDataBase();
         }
 
-        private void Window_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            CrmEntities.SaveChanges();
-        }
+        //private void Window_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        //{
+        //    CrmEntities.SaveChanges();
+        //}
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {

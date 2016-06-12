@@ -13,7 +13,10 @@
             <TextBox Name="TextBox2" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
             <Label Content="Connection string:" HorizontalAlignment="Left"/>
             <TextBox Name="TextBox3" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
-            <Button x:Name="Button1" Content="OK" Height="20" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="97,20,96.6,20" Click="Button1_Click"/>
+            <Button x:Name="Button1" Content="Zapisz"  Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin ="5"  Click="Button1_Click"/>
+            <Button x:Name="Create" Content="Stwórz bazę danych" IsEnabled="False" Height="30" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center" Margin ="5"  Click="Create_OnClickButton"/>
+            <Button x:Name="Delete" Content="Wyczyść bazę danych" IsEnabled="False" Height="30" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center" Margin ="5"  Click="Drop_OnClickButton"/>
+
         </StackPanel>
     </Grid>
 </Window>

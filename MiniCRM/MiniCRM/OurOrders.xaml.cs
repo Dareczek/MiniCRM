@@ -25,15 +25,15 @@ namespace MiniCRM
             _crmEntities = ((MainWindow)Application.Current.MainWindow).CrmEntities;
             CurrencyComboBox.ItemsSource = Enum.GetValues(typeof(Currency));
             CurrencyComboBox.SelectedIndex = 0;
-            KlientColumn.ItemsSource = _crmEntities.Products.Local;
+            ProductNameColumn.ItemsSource = _crmEntities.Products.Local;
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
             {
-                var zdarzenieViewSource = ((CollectionViewSource)(FindResource("OrderikViewSource")));
+                var view = ((CollectionViewSource)(FindResource("OrderikViewSource")));
                 _crmEntities.Orderiks.Load();
-                zdarzenieViewSource.Source = _crmEntities.Orderiks.Local;
+                view.Source = _crmEntities.Orderiks.Local;
             }
         }
 
@@ -58,6 +58,11 @@ namespace MiniCRM
         }
         private void SomeSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            GlobalOptions.Instance.ChangeGlobalOptions();
         }
     }
 }
