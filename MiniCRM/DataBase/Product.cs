@@ -20,7 +20,12 @@ namespace DataBase
             this.ClientOrders = new HashSet<ClientOrder>();
             this.Orderiks = new HashSet<Orderik>();
         }
-    
+
+        public override string ToString()
+        {
+            return Name.ToString();
+        }
+
         public int ProductId { get; set; }
         public string Name { get; set; }
         public Nullable<double> Price { get; set; }

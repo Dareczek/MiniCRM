@@ -32,30 +32,30 @@
         <DataGrid x:Name="OrderikDataGrid" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="5" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
 
-                <DataGridComboBoxColumn x:Name="KlientColumn" Header="Klient" Width="SizeToHeader" SelectedValueBinding="{Binding Product, Mode=TwoWay}" DisplayMemberPath="{Binding Product}" >
-                    <DataGridComboBoxColumn.EditingElementStyle>
-                        <Style TargetType="{x:Type ComboBox}">
-                            <EventSetter Event="SelectionChanged" Handler="SomeSelectionChanged" />
-                        </Style>
-                    </DataGridComboBoxColumn.EditingElementStyle>
-                </DataGridComboBoxColumn>
-
-
-
-                <DataGridTextColumn x:Name="AmountColumn" Binding="{Binding Amount}" Header="Amount" Width="SizeToHeader"/>
-                <DataGridTemplateColumn x:Name="DataTimikColumn" Header="Data Timik" Width="SizeToHeader">
+                <DataGridTemplateColumn x:Name="DataTimikColumn" Header="Data zamówienia" Width="SizeToHeader">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <DatePicker SelectedDate="{Binding DataTimik, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="OrderikIdColumn" Binding="{Binding OrderikId}" Header="Orderik Id" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="PaidColumn" Binding="{Binding Paid}" Header="Paid" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="ProductIdColumn" Binding="{Binding ProductId}" Header="Product Id" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="statusikColumn" Binding="{Binding Statusik}" Header="Statusik" Width="SizeToHeader"/>
+
+                <DataGridComboBoxColumn x:Name="ProductNameColumn" Header="Nazwa produktu" Width="SizeToHeader" SelectedValueBinding="{Binding Product, Mode=TwoWay}" DisplayMemberPath="{Binding Product}" >
+                    <DataGridComboBoxColumn.EditingElementStyle>
+                        <Style TargetType="{x:Type ComboBox}">
+                            <EventSetter Event="SelectionChanged" Handler="SomeSelectionChanged" />
+                        </Style>
+                    </DataGridComboBoxColumn.EditingElementStyle>
+                </DataGridComboBoxColumn>
+                <DataGridTextColumn x:Name="AmountColumn" Binding="{Binding Amount}" Header="Ilość" Width="SizeToHeader"/>
+
+                <DataGridCheckBoxColumn x:Name="PaidColumn" Binding="{Binding Paid}" Header="Opłacone" Width="SizeToHeader"/>
+
             </DataGrid.Columns>
         </DataGrid>
+        
+            
+        
         <StackPanel Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" >
             <Label Content="Wybierz walutę" Margin="5,0,5,0"/>
             <ComboBox Name="CurrencyComboBox" Margin="5,5,5,5"/>

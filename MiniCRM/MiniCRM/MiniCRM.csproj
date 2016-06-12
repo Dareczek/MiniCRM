@@ -80,6 +80,7 @@
     <Compile Include="ClientsORderss.xaml.cs">
       <DependentUpon>ClientsORderss.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CountIncomes.cs" />
     <Compile Include="CountMoney.cs" />
     <Compile Include="Clientss.xaml.cs">
       <DependentUpon>Clientss.xaml</DependentUpon>
@@ -148,13 +149,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Fakes Include="Fakes\EntityFramework.SqlServer.fakes" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\ModelDataBase.Client.datasource" />
-    <None Include="Properties\DataSources\ModelDataBase.ClientOrder.datasource" />
-    <None Include="Properties\DataSources\ModelDataBase.CRMEntities.datasource" />
-    <None Include="Properties\DataSources\ModelDataBase.Orderik.datasource" />
-    <None Include="Properties\DataSources\ModelDataBase.Product.datasource" />
+    <None Include="Properties\DataSources\DataBase.Client.datasource" />
+    <None Include="Properties\DataSources\DataBase.ClientOrder.datasource" />
+    <None Include="Properties\DataSources\DataBase.CRMEntities.datasource" />
+    <None Include="Properties\DataSources\DataBase.Orderik.datasource" />
+    <None Include="Properties\DataSources\DataBase.Product.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
