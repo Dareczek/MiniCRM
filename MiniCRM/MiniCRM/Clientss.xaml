@@ -32,11 +32,10 @@
                 <DataGridTextColumn x:Name="SurnameColumn" Width="SizeToHeader" Header="Imię" Binding="{Binding Surname}"/>
                 <DataGridTextColumn x:Name="NameColumn" Width="SizeToHeader" Header="Nazwisko/Nazwa" Binding="{Binding Name}"/>
                 <DataGridTextColumn x:Name="AdressColumn" Width="SizeToHeader" Header="Adres" Binding="{Binding Adress}"/>
-                <DataGridTextColumn x:Name="EmailColumn" Width="SizeToHeader" Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn x:Name="EmailColumn" Width="130" Header="Email" Binding="{Binding Email}"/>
                 <DataGridTextColumn x:Name="NipColumn" Width="SizeToHeader" Header="NIP Firmowy" Binding="{Binding Nip}"/>
                 <DataGridTextColumn x:Name="PeselColumn" Width="SizeToHeader" Header="PESEL" Binding="{Binding Pesel}"/>
                 <DataGridTextColumn x:Name="TelephoneColumn" Width="SizeToHeader" Header="Telefon" Binding="{Binding Telephone}"/>
-                <DataGridTextColumn x:Name="ActiveColumn" Width="SizeToHeader" Header="Aktywny" Binding="{Binding Active}"/>
 
             </DataGrid.Columns>
         </DataGrid>

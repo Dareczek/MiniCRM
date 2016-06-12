@@ -64,7 +64,7 @@
         <StackPanel Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" >
             <Label Content="Wybierz walutę" Margin="5,0,5,0"/>
             <ComboBox Name="CurrencyComboBox" Margin="5,5,5,5"/>
-            <Button Name="CountButton" Content="Policz wydatki" Margin="5,0,5,0" Click="CountButton_Click"/>
+            <Button Name="CountButton" Content="Policz przychody" Margin="5,0,5,0" Click="CountButton_Click"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="1" Margin="5,5,5,5">

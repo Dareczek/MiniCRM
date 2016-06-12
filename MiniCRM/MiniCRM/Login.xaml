@@ -12,7 +12,7 @@
             <Label Content="Hasło:" HorizontalAlignment="Left"/>
             <TextBox Name="TextBox2" Background="AliceBlue" Height="20" Margin="20,0,20,0"/>
             
-            <Button x:Name="Check" Content="OK"  Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin ="5"  Click="Button1_Click"/>
+            <Button x:Name="Check" Content="OK"  Height="30" Width="80" VerticalAlignment="Center" HorizontalAlignment="Center" Margin ="5"  Click="Button1_Click"/>
 
         </StackPanel>
     </Grid>
