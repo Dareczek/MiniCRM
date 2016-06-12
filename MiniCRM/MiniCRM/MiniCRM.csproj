@@ -148,7 +148,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Fakes Include="Fakes\EntityFramework.SqlServer.fakes" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ModelDataBase.Client.datasource" />
     <None Include="Properties\DataSources\ModelDataBase.ClientOrder.datasource" />
