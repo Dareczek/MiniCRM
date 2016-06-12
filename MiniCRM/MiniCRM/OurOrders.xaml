@@ -3,13 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:DataModel="clr-namespace:ModelDataBase;assembly=ModelDataBase"
-        xmlns:talex="http://schemas.talex-soft.com/2010/xaml/presentation"
+    xmlns:talex="http://schemas.talex-soft.com/2010/xaml/presentation"
+        xmlns:dataBase="clr-namespace:DataBase;assembly=DataBase"
         x:Class="MiniCRM.OurOrders"
         mc:Ignorable="d" Loaded="UserControl_Loaded"
         Height="400" Width="750">
     <UserControl.Resources>
-        <CollectionViewSource x:Key="OrderikViewSource" d:DesignSource="{d:DesignInstance {x:Type DataModel:Orderik}, CreateList=True}"/>
+        <CollectionViewSource x:Key="OrderikViewSource" d:DesignSource="{d:DesignInstance {x:Type dataBase:Orderik}, CreateList=True}"/>
     </UserControl.Resources>
 
 

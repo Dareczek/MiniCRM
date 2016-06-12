@@ -35,7 +35,6 @@ CREATE TABLE Orderik
 CREATE TABLE ClientOrder
 (
 	ClientOrderId int identity(1, 1) primary key,
-	OrderikId int references Orderik(OrderikId),
 	ClientId int references Client(ClientId),
 	ProductId int references Product(ProductId),
 	Paid int,

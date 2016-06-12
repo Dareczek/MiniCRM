@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f4dbe56d4dfe4acdbe76147009894f94" Name="Diagram1" ZoomLevel="46">
+        <EntityTypeShape EntityType="CRMModel.Client" Width="1.5" PointX="2.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.ClientOrder" Width="1.5" PointX="4.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Orderik" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Product" Width="1.5" PointX="8.625" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="CRMModel.FK__ClientOrd__Clien__4D2A7347" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK__ClientOrd__Produ__4E1E9780" ManuallyRouted="false" />
+        <AssociationConnector Association="CRMModel.FK__Orderik__Product__4A4E069C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

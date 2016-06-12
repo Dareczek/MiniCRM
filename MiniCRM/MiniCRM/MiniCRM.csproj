@@ -35,12 +35,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataBase">
+      <HintPath>..\DataBase\bin\Debug\DataBase.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ModelDataBase\bin\Debug\EntityFramework.dll</HintPath>
+      <HintPath>..\DataBase\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\ModelDataBase\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DataBase\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="FirstFloor.ModernUI, Version=1.0.9.0, Culture=neutral, PublicKeyToken=bc9b0c37bf06c6a9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -48,9 +52,6 @@
     </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="ModelDataBase">
-      <HintPath>..\ModelDataBase\bin\Debug\ModelDataBase.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -76,10 +77,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BusinessClient.cs" />
+    <Compile Include="ClientsORderss.xaml.cs">
+      <DependentUpon>ClientsORderss.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CountMoney.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="ClientOrder.cs" />
     <Compile Include="Clientss.xaml.cs">
       <DependentUpon>Clientss.xaml</DependentUpon>
     </Compile>
@@ -89,18 +90,17 @@
     <Compile Include="OkienkoOpcje.xaml.cs">
       <DependentUpon>OkienkoOpcje.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Order.cs" />
     <Compile Include="Productt.xaml.cs">
       <DependentUpon>Productt.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RetailClient.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="OurOrders.xaml.cs">
       <DependentUpon>OurOrders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SomeoneOrders.xaml.cs">
-      <DependentUpon>SomeoneOrders.xaml</DependentUpon>
-    </Compile>
+    <Page Include="ClientsORderss.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Clientss.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -126,10 +126,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Productt.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SomeoneOrders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

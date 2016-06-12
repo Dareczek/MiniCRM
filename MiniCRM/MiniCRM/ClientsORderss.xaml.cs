@@ -1,17 +1,29 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
-using ModelDataBase;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using DataBase;
 
 namespace MiniCRM
 {
     /// <summary>
-    /// Interaction logic for Zamowienia.xaml
+    /// Interaction logic for Productt.xaml
     /// </summary>
-    public partial class SomeoneOrders
+    public partial class ClientsORderss : UserControl
     {
         private CRMEntities _crmEntities;
-        public SomeoneOrders()
+        public ClientsORderss()
         {
             InitializeComponent();
             _crmEntities = ((MainWindow)Application.Current.MainWindow).CrmEntities;

@@ -4,14 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MiniCRM"
-             xmlns:ModelDataBase="clr-namespace:ModelDataBase;assembly=ModelDataBase" x:Class="MiniCRM.SomeoneOrders"
-             mc:Ignorable="d" Loaded="UserControl_Loaded" Height="351.381" Width="1055.801">
+    xmlns:dataBase="clr-namespace:DataBase;assembly=DataBase"
+             x:Class="MiniCRM.ClientsORderss"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded">
     <UserControl.Resources>
-        <CollectionViewSource x:Key="clientOrderViewSource" d:DesignSource="{d:DesignInstance {x:Type ModelDataBase:ClientOrder}, CreateList=True}"/>
+        <CollectionViewSource x:Key="clientOrderViewSource" d:DesignSource="{d:DesignInstance {x:Type dataBase:ClientOrder}, CreateList=True}"/>
     </UserControl.Resources>
-    <Grid DataContext="{StaticResource clientOrderViewSource}" Margin="0,0,-650,65">
+    <Grid DataContext="{StaticResource clientOrderViewSource}" Margin="0,0,-303,10">
 
-        <DataGrid x:Name="clientOrderDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="10,10,-110,90" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+        <DataGrid x:Name="clientOrderDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="10,90,99,10" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="amountColumn" Width="SizeToHeader" Header="Amount" Binding="{Binding Amount}"/>
                 <DataGridTextColumn x:Name="clientIdColumn" Width="SizeToHeader" Header="Client Id" Binding="{Binding ClientId}"/>

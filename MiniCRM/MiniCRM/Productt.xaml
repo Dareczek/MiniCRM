@@ -4,10 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MiniCRM"
-             xmlns:ModelDataBase="clr-namespace:ModelDataBase;assembly=ModelDataBase" x:Class="MiniCRM.Productt"
+    xmlns:dataBase="clr-namespace:DataBase;assembly=DataBase"
+             x:Class="MiniCRM.Productt"
              mc:Ignorable="d" Loaded="UserControl_Loaded" Height="235.359" Width="530.387">
     <UserControl.Resources>
-        <CollectionViewSource x:Key="productViewSource" d:DesignSource="{d:DesignInstance {x:Type ModelDataBase:Product}, CreateList=True}"/>
+        <CollectionViewSource x:Key="productViewSource" d:DesignSource="{d:DesignInstance {x:Type dataBase:Product}, CreateList=True}"/>
     </UserControl.Resources>
     <Grid DataContext="{StaticResource productViewSource}" Margin="0,0,-225,36">
 

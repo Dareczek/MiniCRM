@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using System.Net.Sockets;
-using ModelDataBase;
+using DataBase;
 
 namespace MiniCRM
 {
