@@ -59,5 +59,10 @@ namespace MiniCRM
         private void SomeSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
         }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            GlobalOptions.Instance.ChangeGlobalOptions();
+        }
     }
 }

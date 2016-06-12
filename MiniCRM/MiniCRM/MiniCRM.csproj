@@ -88,13 +88,15 @@
     <Compile Include="CountOutgoings.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="GlobalOptions.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OkienkoOpcje.xaml.cs">
       <DependentUpon>OkienkoOpcje.xaml</DependentUpon>
     </Compile>
     <Compile Include="Productt.xaml.cs">
       <DependentUpon>Productt.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
     <Compile Include="OurOrders.xaml.cs">
       <DependentUpon>OurOrders.xaml</DependentUpon>
     </Compile>
@@ -103,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Clientss.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

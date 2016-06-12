@@ -67,6 +67,7 @@
             <Label Content="Wynik:" Margin="5,0,5,0"/>
             <Label Name="LabelResult" Content="" Margin="5,5,5,5"/>
         </StackPanel>
+        <Button Name="Ustawienia" Grid.Row="5" Grid.Column="5" Content="Ustawienia" Margin="20,20,20,20" Click="SettingsButton_Click"/>
     </Grid>
 </UserControl>
 

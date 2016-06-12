@@ -20,10 +20,10 @@ namespace MiniCRM
         public static GlobalOptions Instance => _globalOptions ?? (_globalOptions = new GlobalOptions());
         private GlobalOptions()
         {
-            
+
             try
             {
-                
+
                 var xml = XDocument.Load(FileName);
                 if (xml.Root == null) return;
                 var element = xml.Root.Element("users");
@@ -36,13 +36,12 @@ namespace MiniCRM
                         if (element != null) _activeUser.Login = element.Value;
                         element = xElement.Element("password");
                         if (element != null) _activeUser.Password = element.Value;
-                       
+
                     }
                 }
                 element = xml.Root.Element("connectionString");
                 if (element != null) ConnectionString = element.Value;
-                element = xml.Root.Element("email");
-               
+
             }
             catch (Exception)
             {
@@ -65,15 +64,13 @@ namespace MiniCRM
                             )
                         ),
                     new XElement("connectionString", optionsWindow.ConectionString)
-                    
+
                 )
             );
             xml.Save(FileName);
 
-            
-
             ConnectionString = optionsWindow.ConectionString;
-           
+
         }
 
         public void ChangeGlobalOptions()
@@ -82,12 +79,25 @@ namespace MiniCRM
             optionsWindow.ShowDialog();
 
             if (optionsWindow.Login != _activeUser.Login || optionsWindow.Password != _activeUser.Password)
-                // wywalić z listy i zmienić w pliku xml
+            {
                 _activeUser.Login = optionsWindow.Login;
-            _activeUser.Password = optionsWindow.Password;
-         
-            ConnectionString = optionsWindow.ConectionString;
-          
+                _activeUser.Password = optionsWindow.Password;
+                ConnectionString = optionsWindow.ConectionString;
+
+                var xml = new XDocument(
+                    new XComment("Czy to działa?"),
+                    new XElement("options",
+                        new XElement("users",
+                            new XElement("user",
+                                new XElement("login", _activeUser.Login),
+                                new XElement("password", _activeUser.Password)
+                                )
+                            ),
+                        new XElement("connectionString", ConnectionString)
+                        )
+                    );
+                xml.Save(FileName);
+            }
         }
     }
 }

@@ -33,5 +33,15 @@ namespace MiniCRM
             else
                 Close();
         }
+
+        private void Create_OnClickButton(object sender, RoutedEventArgs e)
+        {
+            DataBase.Instance.CreateDataBase();
+        }
+
+        private void Drop_OnClickButton(object sender, RoutedEventArgs e)
+        {
+            DataBase.Instance.DropDataBase();
+        }
     }
 }
